@@ -19,11 +19,10 @@ y = np.transpose(np.asmatrix(data[..., 1]))
 m = len(y)
 X = np.transpose(np.array([np.ones(m), X]))
 theta = np.matlib.zeros((2,1))
-
 J = cc.computeCost(X, y, theta)
 print("With theta = [0 0] the cost coumputed is: " + str(J))
+theta = np.matlib.zeros((2,1))
 theta = gd.gradientDescent(X, y, theta, 0.01, 2000)
-print(theta)
-
+print("Value of theta: " + str(theta))
 
 
