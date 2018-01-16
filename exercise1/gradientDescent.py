@@ -14,7 +14,7 @@ def gradientDescent(X, y, theta, alpha, interations):
   
   for i in range(interations):
     for j in range(n):
-      temp[j] = theta[j] - alpha * (1/m) * sum(np.transpose(X * theta - y) * np.transpose(np.asmatrix(X[..., j])))
-    theta = np.transpose(np.matrix(np.array(temp)))
+      temp[j] = theta[j] - alpha * (1/m) * sum((X @ theta - y).T @ np.array([X[..., j]]).T)
+    theta = np.array([temp]).T
   
   return theta

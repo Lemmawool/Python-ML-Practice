@@ -9,4 +9,4 @@ import numpy as np
 
 def computeCost(X, y, theta):
   m = len(y)
-  return ((1/(2*m)) * sum(np.square(X * theta - y)))
+  return ((1/(2*m)) * sum(np.square(X @ theta - y)))
