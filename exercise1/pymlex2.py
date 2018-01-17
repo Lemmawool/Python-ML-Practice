@@ -6,7 +6,6 @@ Created on Mon Jan 15 20:02:17 2018
 """
 
 import numpy as np
-import computeCost as cc
 import gradientDescent as gd
 import featureNormalize as fn
 
@@ -22,7 +21,10 @@ X_norm = np.append(np.ones((m,1)), X_norm, axis=1)
 theta = np.zeros((3,1))
 theta = gd.gradientDescent(X_norm, y, theta, 0.01, 400)
 print(theta)
-
+test = np.array([[1650,3]])
+test = fn.featureNormalize(test)
+test = np.append(np.ones((1,1)), test, axis=1)
+print(test @ theta)
 
 
 
