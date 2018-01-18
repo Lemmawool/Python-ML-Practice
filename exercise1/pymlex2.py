@@ -8,6 +8,7 @@ Created on Mon Jan 15 20:02:17 2018
 import numpy as np
 import gradientDescent as gd
 import featureNormalize as fn
+import normalEquation as ne
 
 data = np.loadtxt(open("data2.txt", "rb"), delimiter=",")
 
@@ -26,6 +27,8 @@ test = fn.featureNormalize(test)
 test = np.insert(test, 0, [[1]])
 print(test @ theta)
 
-
-
+X = np.append(np.ones((m,1)), X, axis=1)
+test = np.array([[1,1650,3]])
+theta = ne.normalEquation(X, y)
+print(test @ theta)
 
