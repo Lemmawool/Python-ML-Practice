@@ -14,13 +14,16 @@ X = data[..., range(num_features - 1)]
 y = np.array([data[..., num_features - 1]]).T
 m = len(y)
 X = np.append(np.ones((m,1)), X, axis=1)
-theta = np.zeros((num_features,1))
 
+theta = np.zeros((num_features,1))
 cost = ex2.costFunc(X, y, theta)
 print(cost)
 grad = ex2.gradFunc(X, y, theta)
 print(grad)
 
-
-
+theta2 = np.array([[-24, 0.2, 0.2]]).T
+cost2 = ex2.costFunc(X, y, theta2)
+print(cost2)
+grad2 = ex2.gradFunc(X, y, theta2)
+print(grad2)
 
