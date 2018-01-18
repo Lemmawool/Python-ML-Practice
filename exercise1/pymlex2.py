@@ -21,9 +21,9 @@ X_norm = np.append(np.ones((m,1)), X_norm, axis=1)
 theta = np.zeros((3,1))
 theta = gd.gradientDescent(X_norm, y, theta, 0.01, 400)
 print(theta)
-test = np.array([[1650,3]])
+test = np.array([[1650,3]]).T
 test = fn.featureNormalize(test)
-test = np.append(np.ones((1,1)), test, axis=1)
+test = np.insert(test, 0, [[1]])
 print(test @ theta)
 
 
