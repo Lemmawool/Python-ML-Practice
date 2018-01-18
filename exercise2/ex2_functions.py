@@ -16,3 +16,15 @@ def costFunc(X, y, theta):
   m = len(y)
   J = (1/m) * (-y.T @ sp.log(sigmoid(X @ theta)) - (1 - y).T @ sp.log(1 - sigmoid(X @ theta)))
   return J
+
+def gradFunc(X, y, theta):
+  m = len(y)
+  grad = (1/m) * X.T @ (sigmoid (X @ theta) - y)
+  return grad
+
+
+
+
+
+
+
